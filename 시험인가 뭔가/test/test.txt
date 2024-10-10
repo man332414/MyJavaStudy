@@ -1,0 +1,227 @@
+1.(문답형) 변수의 5가지 데이터 타입의 유형과 특징을 서술 하시오. ( 변수의 종류를 설명하셔야 됩니다.)(각2점/10점)
+  가. 정수 : 정수형 타입을 저장할 수 있는 데이터 타입
+    1) byte    2) short    3) int    4) long
+  나. 실수 : 실수형 타입을 저장할 수 있는 데이터 타입
+    1) float    2) double
+  다. 문자 : 문자형 타입을 저장할 수 있는 데이터 타입
+    1) char
+  라. 논리 : 논리형 타입을 저장할 수 있는 데이터 타입
+    2) boolean (true/false)
+  마. 참조 : 참조값을 저장할 수 있는 데이터 타입
+
+
+2.(문답형) 인스턴스 변수와 클래스 변수의 차이점을 비교 서술 하시오. (각5점 /10점)
+(1) 인스턴스 변수 : 클래스 내의 전역변수로 생성 이후 사용할 수 있으며, 객체 생성 시 생성되어 n개를 생성할 수 있음
+(2) 클래스 변수 : 클래스 내의 전역변수로 프로그램 실행 전 생성되며, 객체를 생성하지 않아도 사용할 수 있으나 1개만 존재할 수 있음.
+
+3.
+package exam;
+
+class sub
+{
+	int calculator (int a, int b)
+	{
+		int result = a + b;
+		return result;
+	}
+}
+
+public class exam3 {
+
+	public static void main(String[] args) 
+	{
+		int first = 10;
+		int second = 20;
+		sub sb = new sub();
+		int result = sb.calculator(first, second);
+		System.out.println("출력결과는 : " + result +"입니다.");
+	}
+
+}
+
+
+4. 
+package exam;
+
+public class exam4 
+{
+
+	public static void main(String[] args) 
+	{
+		int pencils = 534;
+		int student = 30;
+		
+		int pencilsPerStudent = pencils / student;
+		System.out.println(pencilsPerStudent);
+		
+		int pencilsLeft = pencils % student;
+		System.out.println(pencilsLeft);
+	}
+
+}
+
+5.
+package exam;
+
+public class exam5 
+{
+
+	public static void main(String[] args) 
+	{
+		int sum = 0;
+		for(int i = 1; i<=100; i++)
+		{
+			if(i%3==0)
+			{
+				sum += i;
+				//System.out.println(i);
+			}
+		}
+		System.out.println("3의 배수 총합은 : " + sum);
+	}
+
+}
+
+6. 
+package exam;
+
+public class exam6 
+{
+
+	public static void main(String[] args) 
+	{
+		int rnrneks = 0;
+		for(int i = 2; i < 10; i++)
+		{
+			for(int j = 2; j < 10; j++)
+			{
+				rnrneks = i * j;
+				System.out.printf("%d x %d = %d ", j, i, rnrneks);
+			}
+			System.out.println();
+		}
+	}
+
+}
+
+7. 
+package exam;
+
+public class exam7_1_obj 
+{
+	static int a = 100;
+	int b = 200;
+	exam7_1_obj(){}
+}
+
+
+package exam;
+
+public class exam7
+{
+
+	public static void main(String[] args)
+	{
+		System.out.println(exam7_1_obj.a);
+		exam7_1_obj obj = new exam7_1_obj();
+		System.out.println(obj.b);
+	}
+
+}
+
+8.
+package exam;
+
+public class exam8 
+{
+
+	public static void main(String[] args) 
+	{
+		int kor = 80;
+		int math = 65;
+		int eng = 70;
+		
+		int avg = (kor+math+eng)/3;
+		System.out.println(avg);
+		if (avg>=90) 
+		{
+			System.out.println("A");
+		}
+		else if(avg>=80)
+		{
+			System.out.println("B");
+		}
+		else if(avg>=70)
+		{
+			System.out.println("C");
+		}
+		else
+		{
+			System.out.println("F");
+		}
+			
+	}
+
+}
+
+9.
+package exam;
+
+import java.util.Scanner;
+
+public class exam9 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner input = new Scanner(System.in);
+		System.out.println("x를 입력하여 프로그램을 종료하세요");
+		String input_x = input.nextLine();
+		//System.out.println(input_x.equals("x"));
+		while(true)
+		{
+			if(input_x.equals("x")) 
+			{
+				break;
+			}
+		}
+		System.out.println("프로그램을 종료합니다.");
+	}
+
+}
+
+10.
+package exam;
+
+public class exam10 
+{
+
+	public static void main(String[] args) 
+	{
+		int[][] arr = {
+				{5, 5, 5, 5, 5},
+				{10, 10, 10, 10, 10},
+				{20, 20, 20, 20, 20},
+				{30, 30, 30, 30, 30}
+				};
+		int total = 0;
+		int average = 0;
+		int i=0;
+		int j=0;
+		for(i = 0; i < arr.length; i++)
+		{
+			//System.out.println(i);
+			for(j = 0; j < arr[i].length; j++) 
+			{
+				//System.out.println(j);
+				total += arr[i][j];
+			}
+		}
+		//System.out.println(i + ", " +j);
+		average = total / (i * j);
+		System.out.println("total = " + total);
+		System.out.println("average = " + average);
+		//System.out.println(325/20);
+	}
+
+}

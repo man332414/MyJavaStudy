@@ -1,0 +1,20 @@
+package test1;
+
+public class test 
+{
+
+	public static void main(String[] args) 
+	{
+		Exception e = new Exception();
+		try
+		{
+			
+			throw e;
+		}
+		catch(Exception f)
+		{
+			System.out.println("hell ro");
+		}
+	}
+
+}

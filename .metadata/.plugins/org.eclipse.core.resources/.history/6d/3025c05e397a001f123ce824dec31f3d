@@ -1,0 +1,33 @@
+package chapter10_1;
+
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+import java.time.temporal.TemporalAdjusters;
+
+public class exam_86 
+{
+
+	public static void main(String[] args) 
+	{
+		LocalDateTime ldt = LocalDateTime.now();
+		System.out.println(ldt);
+		
+		LocalDateTime new_ldt;
+		
+		new_ldt = ldt.with(TemporalAdjusters.firstDayOfYear());
+		System.out.println("올해 첫번째 날 " + new_ldt);
+		new_ldt = ldt.with(TemporalAdjusters.lastDayOfYear());
+		System.out.println("올해 마지막 날 " + new_ldt);
+		
+		new_ldt = ldt.with(TemporalAdjusters.firstDayOfMonth());
+		System.out.println("이번 달 첫번째 날 " + new_ldt);
+		new_ldt = ldt.with(TemporalAdjusters.lastDayOfMonth());
+		System.out.println("이번 달 마지막 날 " + new_ldt);
+		
+		new_ldt = ldt.with(TemporalAdjusters.firstInMonth(DayOfWeek.MONDAY));
+		System.out.println("이번달 첫번째 월요일 " + new_ldt);
+		new_ldt = ldt.with(TemporalAdjusters.lastInMonth(DayOfWeek.SUNDAY));
+		System.out.println("올해 마지막 날 " + new_ldt);
+	}
+
+}

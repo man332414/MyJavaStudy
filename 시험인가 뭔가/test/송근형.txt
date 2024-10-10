@@ -1,0 +1,320 @@
+1.
+package exam;
+
+class A 
+{
+	void learn() 
+	{
+		System.out.println("배우기");
+	}
+	
+	void say()
+	{
+		System.out.println("말하기");
+	}
+	A(){}
+}
+
+class B extends A
+{
+	void lead()
+	{
+		System.out.println("이끌기");
+	}
+	
+	B(){super();}
+}
+
+public class exam_1 
+{
+
+	public static void main(String[] args) 
+	{
+		B student = new B();
+		student.say();
+	}
+
+}
+
+
+2. 
+public : 모두 접근가능
+protected : 같은 패키지 접근 가능, 클래스 객체 접근 가능
+default 같은 패키지 접근 가능
+private : 같은 클래스만 접근 가능
+
+3. 
+package exam;
+
+class Animal 
+{ 
+	   void breath( ) { System . out . println("숨쉬기"); } 
+} 
+
+class Lion extends Animal 
+{ 
+   public String toString( ) { return "사자"; }
+}
+
+class Rabbit extends Animal 
+{ 
+   public String toString( ) { return "토끼"; } 
+}
+
+class Monkey extends Animal 
+{ 
+   public String toString( ) { return "원숭이"; } 
+}
+
+class ZooKeeper 
+{ 
+   void feed(Animal ani) 
+   { 
+      System . out . println(ani + "에게 먹이 주기"); 
+   } 
+}
+
+public class exam_3 
+{ 
+   public static void main(String[] args) 
+   { 
+      ZooKeeper james = new ZooKeeper( );      
+      Animal lion1 = new Lion( );  
+      james . feed(lion1); 
+      Animal rabbit1 = new Rabbit( ); 
+      james . feed(rabbit1); 
+      Animal monkey1 = new Monkey( ); 
+      james . feed(monkey1);
+   }
+}	
+
+
+4. 
+멤버구성 : 추상클래스는 일반함수(내용이 있는 함수)도 갖을 수 있으나 인터페이스는 추상메서드만 갖을 수 있다.
+상속 : 추상클래스는 extends 명령어로 1개만 상속받을 수 있으며, 인터페이스는 implements 명령어로 다수의 인터페이스를 상속받을 수 있다.
+
+5.
+예외처리 1
+package exam;
+
+public class exam_5_1 {
+
+	   public static void main(String[] args) 
+	   { 
+	      int a = 0; 
+	      int b = 2; 
+	      System . out . println(" 연산시작 "); 
+	      try
+	      {
+	    	  int c = b/a;  
+	      }
+	      catch(Exception e)
+	      {
+	    	  e.printStackTrace();
+	      }
+	   } 
+
+}
+
+예외처리 2
+package exam;
+
+class user_exception extends Exception
+{
+	user_exception()
+	{
+		super("예외 발생");
+	}
+}
+
+public class exam_5_2 
+{
+
+   public static void main(String[] args) 
+   {
+	   user_exception u = new user_exception();	   
+	   int a = 0; 
+	   int b = 2; 
+	   System . out . println(" 연산시작 "); 
+	   try
+	   {
+		   int c = b/a;  
+	   }
+	   catch(Exception e)
+	   {
+		   u.printStackTrace();  
+	   }
+   } 
+
+}
+
+
+6. 
+package exam;
+
+public class exam_6 
+{
+
+	public static void main(String[] args) 
+	{
+		String tmp = "abcd9f";
+		
+		for(int i = 0; i<tmp.length(); i++) 
+		{
+			int tmptmp = tmp.charAt(i);
+			if(tmptmp >= 48 && tmptmp <=57) 
+			{
+				System.out.println((char)tmptmp + "는 숫자입니다.");
+			}
+			else
+			{
+				System.out.println((char)tmptmp + "는 문자입니다.");
+			}
+		}
+	}
+
+}
+
+
+7.
+package exam;
+
+import java.util.Random;
+
+public class exam_7 
+{
+	public static void main(String[] args)
+	{
+		Random r1 = new Random();
+		int dice1;
+		int dice2;
+		int cnt = 0;
+		
+		while(true)
+		{
+			dice1 = r1.nextInt(5)+1;
+			dice2 = r1.nextInt(5)+1;
+			System.out.print(dice1 + " ");
+			System.out.println(dice2);
+			if(dice1 == dice2)
+			{
+				System.out.println("떠블입니다 축하합니다");
+				cnt++;
+			}
+			if(cnt == 3)
+			{
+				System.out.println("떠블이 3회 나와서 주사위 굴리기를 종료합니다.");
+				break;
+			}
+		}
+	}
+}
+
+8.
+package exam;
+
+import java.util.ArrayList;
+
+public class exam_8 
+{
+
+	public static void main(String[] args) 
+	{
+		ArrayList arr = new ArrayList();
+		
+		arr.add(0, "A");
+		arr.add(1, "C");
+		arr.add(2, "E");
+		arr.add(3, "D");
+		
+		System.out.print(" 초기상태 : ");
+		System.out.println(arr);
+		
+		System.out.println(" 인덱스 1 위치에 B 추가 : ");
+		arr.add(1, "B");
+		System.out.println(arr);
+		
+		System.out.println(" 인덱스 2 위치의 값 삭제 : ");
+		arr.remove(2);
+		System.out.println(arr);
+		
+		System.out.println(arr.get(2));
+	}
+
+}
+
+9.
+package exam;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class exam_9 
+{
+
+	public static void main(String[] args) throws Exception
+	{
+		FileInputStream fis = null;
+		BufferedInputStream bis = null;
+		FileOutputStream fos = null;
+		BufferedOutputStream bos = null;
+		int i = 0;
+		try 
+		{
+			fis = new FileInputStream("src\\exam9.txt");
+			bis = new BufferedInputStream(fis);
+			fos = new FileOutputStream("result.txt");
+			bos = new BufferedOutputStream(fos);
+			Scanner sc = new Scanner(fis);
+			while(sc.hasNext())
+			{
+				System.out.println(sc.nextLine());
+			}
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			fis.close();
+			fos.close();
+		}
+	}
+
+}
+
+10.
+package exam;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class exam_10 
+{
+
+	public static void main(String[] args) 
+	{
+		HashMap hm = new HashMap();
+		Scanner sc = new Scanner(System.in);
+		
+		hm.put("apple", "사과");
+		hm.put("paper", "종이");
+		hm.put("flower", "꽃");
+		
+		String voca;
+		System.out.print("알고싶은 단어를 입력하세요 : ");
+		
+		voca = sc.nextLine();
+		
+		if(hm.containsKey(voca))
+		{
+			System.out.println("해당하는 뜻은 " + hm.get(voca) + "입니다.");
+		}
+		else
+		{
+			System.out.println("해당언어에 대한 뜻이 없습니다.");
+		}
+	}
+
+}

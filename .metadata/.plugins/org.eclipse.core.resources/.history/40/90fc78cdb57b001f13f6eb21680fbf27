@@ -1,0 +1,13 @@
+package test;
+
+public class test 
+{
+
+	public static void main(String[] args) 
+	{
+		char b = (char)(128542);
+		System.out.println(b);
+		
+	}
+
+}

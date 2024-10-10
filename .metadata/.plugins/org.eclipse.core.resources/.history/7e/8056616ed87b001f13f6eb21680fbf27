@@ -1,0 +1,39 @@
+package test1;
+
+class a
+{
+	int aa;
+	int bb;
+	
+	a(int a, int b)
+	{
+		aa=a;
+		bb=b;
+	}
+}
+
+class c
+{
+	int cc;
+	int dd;
+	
+	c(int a, int b)
+	{
+		cc=a;
+		dd=b;
+	}
+}
+
+public class test 
+{
+
+	public static void main(String[] args) 
+	{
+		a a = new a(4, 5);
+		c aa = new c(4, 5);
+		System.out.println(aa.getClass());
+		System.out.println(aa.hashCode());
+		System.out.println(aa.toString());
+	}
+
+}
