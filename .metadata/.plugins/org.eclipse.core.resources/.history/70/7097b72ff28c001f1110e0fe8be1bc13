@@ -10,12 +10,8 @@ public class test
 		}
 		else
 		{
-//			func(a/2);
-			System.out.print(1%2);
-			System.out.print(2%2);
-			System.out.print(5%2);
-			System.out.print(10%2);
-			System.out.print(20%2);
+			func(a/2);
+			System.out.print(a%2);
 		}
 		return 0;
 	}

@@ -1,0 +1,30 @@
+package test1;
+
+class parent
+{
+	int a=0;
+	parent()
+	{
+		a++;
+		System.out.print(a);
+	}
+}
+
+class child extends parent
+{
+	int b = 0;
+	child(int a)
+	{
+		this.b = a;
+		System.out.print(a++);
+	}
+}
+
+public class test 
+{
+
+	public static void main(String[] args) 
+	{
+		parent c = new child(5);
+	}
+}
